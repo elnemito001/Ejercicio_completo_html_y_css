@@ -1,0 +1,34 @@
+<div class="acerca-container">
+  <div class="info-card">
+    <h1>{{ nombreProyecto }}</h1>
+
+    <div class="detalles">
+      <p><strong>Versión:</strong> {{ version }}</p>
+      <p><strong>Fecha:</strong> {{ fecha }}</p>
+    </div>
+
+    <div class="seccion">
+      <h2>Tecnologías Utilizadas</h2>
+      <div class="tech-grid">
+        <div class="tech-item" *ngFor="let tech of tecnologias">
+          <h3>{{ tech.nombre }}</h3>
+          <p>{{ tech.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="seccion">
+      <h2>Características del Proyecto</h2>
+      <ul class="lista-caracteristicas">
+        <li *ngFor="let caracteristica of caracteristicas">
+          ✓ {{ caracteristica }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-info">
+      <p>Proyecto desarrollado como práctica de Angular</p>
+      <p>Tecnológico Nacional de México - Campus Valle</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<!-- Contenedor principal de la página -->
+<div class="formulario-container">
+
+  <!-- Encabezado de la página -->
+  <div class="encabezado">
+    <h1>📝 Formulario de Registro</h1>
+  </div>
+
+  <!-- Contenedor que divide la pantalla en 2 columnas -->
+  <div class="contenido">
+
+    <!-- COLUMNA IZQUIERDA: Formulario -->
+    <div class="columna-formulario">
+
+      <!-- Formulario con evento (ngSubmit) que llama a enviarFormulario() -->
+      <form (ngSubmit)="enviarFormulario()" class="formulario">
+
+        <!-- Campo NOMBRE -->
+        <div class="campo">
+          <label for="inputNombre">Nombre:</label>
+          <input
+            type="text"
+            id="inputNombre"
+            [(ngModel)]="nombre"
+            name="nombre"
+            placeholder="Ingresa tu nombre">
+          <!-- [(ngModel)] conecta el input con la variable nombre -->
+        </div>
+
+        <!-- Campo APELLIDOS -->
+        <div class="campo">
+          <label for="inputApellidos">Apellidos:</label>
+          <input
+            type="text"
+            id="inputApellidos"
+            [(ngModel)]="apellidos"
+            name="apellidos"
+            placeholder="Ingresa tus apellidos">
+          <!-- [(ngModel)] conecta el input con la variable apellidos -->
+        </div>
+
+        <!-- Campo EDAD -->
+        <div class="campo">
+          <label for="inputEdad">Edad:</label>
+          <input
+            type="number"
+            id="inputEdad"
+            [(ngModel)]="edad"
+            name="edad"
+            placeholder="Ingresa tu edad">
+          <!-- [(ngModel)] conecta el input con la variable edad -->
+        </div>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="submit" class="btn-enviar">Enviar</button>
+
+        <!-- Mostrar mensaje de error si existe -->
+        <!-- *ngIf muestra este div SOLO si mensajeError tiene contenido -->
+        <div *ngIf="mensajeError" class="mensaje-error">
+          ⚠️ {{ mensajeError }}
+        </div>
+
+      </form>
+    </div>
+
+    <!-- COLUMNA DERECHA: Información capturada -->
+    <div class="columna-info">
+
+      <!-- Caja de información -->
+      <!-- *ngIf muestra esta caja SOLO si mostrarDatos es true -->
+      <div *ngIf="mostrarDatos" class="caja-info">
+
+        <!-- Botón de cerrar en la esquina superior derecha -->
+        <button class="btn-cerrar" (click)="cerrarDatos()">✖</button>
+
+        <h2>✅ Información Capturada</h2>
+
+        <!-- Mostrar los datos capturados -->
+        <div class="datos">
+          <p><strong>Nombre:</strong> {{ nombre }}</p>
+          <p><strong>Apellidos:</strong> {{ apellidos }}</p>
+          <p><strong>Edad:</strong> {{ edad }} años</p>
+        </div>
+
+      </div>
+
+      <!-- Mensaje cuando no hay datos para mostrar -->
+      <div *ngIf="!mostrarDatos" class="mensaje-vacio">
+        <p>📋 Completa el formulario para ver la información aquí</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

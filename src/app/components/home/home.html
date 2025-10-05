@@ -1,0 +1,24 @@
+<div class="home-container">
+  <div class="card-presentacion">
+    <h1>¡Bienvenido! 👋</h1>
+
+    <div class="info-personal">
+      <h2>Acerca de mí</h2>
+      <p><strong>Nombre:</strong> {{ nombre }}</p>
+      <p><strong>Edad:</strong> {{ edad }} años</p>
+      <p><strong>Carrera:</strong> {{ carrera }}</p>
+      <p><strong>Semestre:</strong> {{ semestre }}</p>
+    </div>
+
+    <div class="intereses-section">
+      <h3>Mis Intereses</h3>
+      <ul>
+        <li *ngFor="let interes of intereses">{{ interes }}</li>
+      </ul>
+    </div>
+
+    <div class="mensaje">
+      <p>Esta es mi aplicación Angular donde practico comunicación entre componentes y navegación.</p>
+    </div>
+  </div>
+</div>

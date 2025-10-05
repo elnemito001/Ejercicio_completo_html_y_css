@@ -1,0 +1,29 @@
+/* Tarjeta del componente hijo */
+.tarjeta {
+    /* Color de fondo verde claro */
+    background: lightgreen;
+
+    /* Espaciado interno */
+    padding: 20px;
+
+    /* Bordes redondeados */
+    border-radius: 10px;
+
+    /* Espacio arriba */
+    margin-top: 20px;
+
+    /* Borde sólido */
+    border: 2px solid darkgreen;
+}
+
+/* Contenido de la tarjeta */
+.cuerpo p {
+    /* Espaciado entre párrafos */
+    margin: 10px 0;
+
+    /* Tamaño de letra */
+    font-size: 18px;
+
+    /* Color del texto */
+    color: darkgreen;
+}

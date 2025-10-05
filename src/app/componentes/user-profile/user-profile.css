@@ -1,0 +1,98 @@
+.user-profile {
+  background: #6c63ff;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+}
+
+h2, h3 {
+  margin: 10px 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+button {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+/* Tabla */
+.usuarios-table {
+  width: 100%;
+  margin-top: 10px;
+  background: white;
+  color: black;
+}
+
+.usuarios-table th,
+.usuarios-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.usuarios-table th {
+  background: #f0f0f0;
+}
+
+/* Secciones */
+.seccion {
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Formulario */
+.formulario input {
+  padding: 5px;
+  margin: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.botones-form {
+  margin-top: 10px;
+}
+
+/* Colores botones */
+.btn-eliminar {
+  background: #ff4444;
+  color: white;
+}
+
+.btn-agregar {
+  background: #44ff44;
+  color: black;
+}
+
+.btn-actualizar {
+  background: #ffaa00;
+  color: black;
+}
+
+.btn-limpiar {
+  background: #888;
+  color: white;
+}
+
+.usuario-encontrado {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mensaje {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}

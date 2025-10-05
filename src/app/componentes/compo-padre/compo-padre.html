@@ -1,0 +1,17 @@
+<!-- Contenedor del componente padre -->
+<div class="tarjeta">
+    <div class="cuerpo">
+        <!-- Título del componente -->
+        <p>Este es el componente PADRE que ENVÍA datos al hijo</p>
+
+        <!-- Aquí mostramos el componente hijo -->
+        <!-- [data]="user" es la forma de ENVIAR datos al hijo -->
+        <!-- Significa: "Hijo, toma esta variable 'user' en tu variable 'data'" -->
+        <app-compo-hijo [data]="user"></app-compo-hijo>
+
+        <!-- Explicación de [data]="user":
+             - [data] = es el nombre del @Input() en el hijo
+             - user = es la variable del padre que queremos enviar
+        -->
+    </div>
+</div>

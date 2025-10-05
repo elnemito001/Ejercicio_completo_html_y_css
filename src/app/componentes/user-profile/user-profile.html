@@ -1,0 +1,70 @@
+<div class="user-profile">
+  <h2>{{ user.name }}</h2>
+  <p>Age: {{ user.age }}</p>
+  <p>Email: {{ user.email }}</p>
+
+  <button (click)="toggleTabla()">
+    {{ mostrarTabla ? 'Ocultar Lista' : 'Ver Lista' }}
+  </button>
+
+  <div *ngIf="mostrarTabla" class="tabla-container">
+    <h3>Lista de Usuarios</h3>
+    <table class="usuarios-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.name }}</td>
+          <td>{{ usuario.age }}</td>
+          <td>{{ usuario.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="seccion">
+    <h3>Buscar Usuario</h3>
+    <input type="number" [(ngModel)]="buscarId" placeholder="Ingrese ID">
+    <button (click)="buscarUsuario()">Buscar</button>
+    <p *ngIf="mensajeBusqueda" class="mensaje">{{ mensajeBusqueda }}</p>
+
+    <div *ngIf="usuarioEncontrado" class="usuario-encontrado">
+      <h4>Usuario Encontrado:</h4>
+      <p><strong>ID:</strong> {{ usuarioEncontrado.id }}</p>
+      <p><strong>Nombre:</strong> {{ usuarioEncontrado.name }}</p>
+      <p><strong>Edad:</strong> {{ usuarioEncontrado.age }}</p>
+      <p><strong>Email:</strong> {{ usuarioEncontrado.email }}</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <h3>Eliminar Usuario</h3>
+    <input type="number" [(ngModel)]="eliminarId" placeholder="Ingrese ID a eliminar">
+    <button (click)="eliminarUsuario()" class="btn-eliminar">Eliminar</button>
+    <p *ngIf="mensajeEliminar" class="mensaje">{{ mensajeEliminar }}</p>
+  </div>
+
+  <div class="seccion">
+    <h3>Agregar/Actualizar Usuario</h3>
+    <div class="formulario">
+      <input type="number" [(ngModel)]="actualizarId" placeholder="ID (solo para actualizar)">
+      <input type="text" [(ngModel)]="nuevoNombre" placeholder="Nombre">
+      <input type="number" [(ngModel)]="nuevaEdad" placeholder="Edad">
+      <input type="email" [(ngModel)]="nuevoEmail" placeholder="Email">
+
+      <div class="botones-form">
+        <button (click)="agregarUsuario()" class="btn-agregar">Agregar Nuevo</button>
+        <button (click)="actualizarUsuario()" class="btn-actualizar">Actualizar</button>
+        <button (click)="limpiarFormulario()" class="btn-limpiar">Limpiar</button>
+      </div>
+    </div>
+    <p *ngIf="mensajeFormulario" class="mensaje">{{ mensajeFormulario }}</p>
+  </div>
+</div>
