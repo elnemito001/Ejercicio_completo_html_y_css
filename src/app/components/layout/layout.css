@@ -1,0 +1,173 @@
+/* ========== CONTENEDOR GENERAL ========== */
+/* Este es el contenedor principal que envuelve TODO */
+.contenedor-general {
+    width: 1200px; /* Ancho de 1200px como se pidió */
+    margin: 0 auto; /* Centrar el contenedor */
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ========== CABECERA (HEADER) ========== */
+/* Ocupa el 100% del ancho del contenedor general */
+.cabecera {
+    width: 100%; /* Ancho del 100% */
+    background: #2c3e50;
+    color: white;
+    padding: 30px 0;
+    text-align: center; /* Texto centrado */
+}
+
+.cabecera h1 {
+    font-size: 2.5rem; /* Texto grande */
+    margin: 0;
+}
+
+/* ========== MENU ========== */
+/* Los elementos del menú están uno al lado del otro */
+.menu {
+    width: 100%;
+    background: #34495e;
+    padding: 0;
+}
+
+.menu ul {
+    list-style: none; /* Quitar los puntos de la lista */
+    display: flex; /* Los elementos se ponen uno al lado del otro */
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    flex: 1; /* Cada elemento ocupa el mismo espacio */
+}
+
+.menu a {
+    display: block; /* Ocupa todo el espacio del li */
+    color: white;
+    text-decoration: none; /* Sin subrayado */
+    padding: 15px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background: #2c3e50; /* Cambia de color al pasar el mouse */
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+/* Contenedor que tiene el contenido principal y la barra lateral */
+.contenedor-principal {
+    display: flex; /* Para poner contenido y barra lateral lado a lado */
+    width: 100%;
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
+/* Ocupa el 70% del ancho */
+.contenido-principal {
+    width: 70%; /* 70% del ancho */
+    padding: 20px;
+}
+
+.contenido-principal h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* ========== CUADRÍCULA DE CAJAS ========== */
+/* 4 líneas de 2 cajas = 8 cajas en total */
+.cuadricula {
+    display: grid; /* Usar CSS Grid */
+    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
+    gap: 20px; /* Espacio entre las cajas */
+}
+
+.caja {
+    background: #ecf0f1;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    min-height: 150px;
+}
+
+.caja h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.caja p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* ========== BARRA LATERAL ========== */
+/* Ocupa el 30% del ancho */
+.barra-lateral {
+    width: 30%; /* 30% del ancho */
+    background: #ecf0f1;
+    padding: 20px;
+}
+
+.barra-lateral h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.widget {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.widget h4 {
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.widget p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* ========== FOOTER ========== */
+/* Ocupa el 100% del ancho y está debajo de todo */
+.footer {
+    width: 100%; /* 100% del ancho del contenedor general */
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    clear: both; /* Asegura que esté debajo de todo */
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* ========== DISEÑO RESPONSIVE ========== */
+/* Para pantallas más pequeñas */
+@media (max-width: 1250px) {
+    .contenedor-general {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column; /* Pone el contenido y barra lateral uno abajo del otro */
+    }
+
+    .contenido-principal,
+    .barra-lateral {
+        width: 100%; /* Ambos ocupan el 100% */
+    }
+
+    .cuadricula {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Menú vertical en móvil */
+    }
+}

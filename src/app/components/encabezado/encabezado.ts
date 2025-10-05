@@ -13,7 +13,8 @@ export class EncabezadoComponent {
   menu = [
     { label: 'Home', path: '/home' },
     { label: 'Usuarios', path: '/usuarios' },
-    { label: 'Formulario', path: '/formulario' }, // NUEVO
+    { label: 'Formulario', path: '/formulario' },
+    { label: 'Layout', path: '/layout' }, // NUEVO
     { label: 'Acerca de', path: '/acerca' }
   ];
 }
